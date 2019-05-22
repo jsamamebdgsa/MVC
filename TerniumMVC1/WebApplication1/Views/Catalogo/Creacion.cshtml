@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Models.Producto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Catálogo</title>
+</head>
+<body>
+    <div>
+        <h1>Formulario de productos</h1>
+        @ViewBag.Subtitulo
+    </div>
+
+    @Html.ActionLink("Listado", "Lista")
+
+    <hr />
+
+    @using (Html.BeginForm("Agregar", "Catalogo", FormMethod.Post))
+    {
+        <div>
+            @Html.LabelFor(x => x.Codigo)
+            @Html.TextBoxFor(x => x.Codigo)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Nombre)
+            @Html.TextBoxFor(x => x.Nombre)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Precio)
+            @Html.TextBoxFor(x => x.Precio, new { @type = "number", step = 0.01  })
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Vencimiento)
+            @Html.TextBoxFor(x => x.Vencimiento, new { @type = "date" })
+        </div>
+        <div>
+            <input type="submit" value="Grabar" />
+        </div>
+    }
+
+</body>
+</html>

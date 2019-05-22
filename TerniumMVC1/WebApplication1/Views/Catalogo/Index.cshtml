@@ -1,0 +1,48 @@
+﻿@model List<WebApplication1.Models.Producto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Catálogo</title>
+</head>
+<body>
+    <div>
+        <h1>Catálogo de productos</h1>
+        @ViewBag.Subtitulo
+    </div>
+
+    @Html.ActionLink("Nuevo", "Creacion")
+
+    <hr />
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Codigo</td>
+                <td>Nombre</td>
+                <td>Precio</td>
+                <td>Vencimiento</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var producto in Model)
+            {
+            <tr>
+                <td>@(producto.Codigo)</td>
+                <td>@(producto.Nombre)</td>
+                <td>@(producto.Precio)</td>
+                <td>@(producto.Vencimiento.ToString("dd/MM/yyy"))</td>
+                <td>@Html.ActionLink("Modificar", "Editar", new { id=producto.Codigo })</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>
