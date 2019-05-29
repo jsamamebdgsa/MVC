@@ -88,11 +88,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Catalogos.mdf" />
+    <Content Include="App_Data\Catalogos_log.ldf">
+      <DependentUpon>Catalogos.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\DataStore.cs" />
+    <Compile Include="App_Start\DbService.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CatalogoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -116,7 +121,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>

@@ -10,7 +10,8 @@ namespace WebApplication1
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        public static DataStore Database = new DataStore();
+        //public static DataStore Database = new DataStore();
+        public static DbService Database = new DbService();
 
         protected void Application_Start()
         {

@@ -36,20 +36,21 @@ namespace WebApplication1.Controllers
         public ActionResult Lista()
         {
             ViewBag.Subtitulo = "Lista";
-            List<Producto> modelo = MvcApplication.Database.Productos;
+            //List<Producto> modelo = MvcApplication.Database.Productos;
+            List<Producto> modelo = MvcApplication.Database.GetAllProductos();
             return View("Index", modelo);
         }
 
         // GET: Catalogo
         public ActionResult Crear()
         {
-            MvcApplication.Database.Productos.Add(new Producto()
-            {
-                Codigo = 10001.ToString("0000"),
-                Nombre = "Producto Creado #" + 10001,
-                Precio = 900.50f,
-                Vencimiento = DateTime.Now.AddYears(20)
-            });
+            //MvcApplication.Database.Productos.Add(new Producto()
+            //{
+            //    Codigo = 10001.ToString("0000"),
+            //    Nombre = "Producto Creado #" + 10001,
+            //    Precio = 900.50f,
+            //    Vencimiento = DateTime.Now.AddYears(20)
+            //});
             return RedirectToAction("Lista");
         }
 
@@ -62,26 +63,27 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult Agregar(Producto producto)
         {
-            MvcApplication.Database.Productos.Add(producto);
+            //MvcApplication.Database.Productos.Add(producto);
+            MvcApplication.Database.AddProducto(producto);
             return RedirectToAction("Lista");
         }
 
         public ActionResult Editar(string id)
         {
             ViewBag.Subtitulo = "Edicion";
-            var modelo = MvcApplication.Database.Productos.Find(x => x.Codigo == id);
-            return View("Editar", modelo);
+            //var modelo = MvcApplication.Database.Productos.Find(x => x.Codigo == id);
+            return View("Editar"/*, modelo*/);
         }
 
         [HttpPost]
         public ActionResult Actualizar(Producto producto)
         {
-            var indice = MvcApplication.Database.Productos.FindIndex(x => x.Codigo == producto.Codigo);
+            //var indice = MvcApplication.Database.Productos.FindIndex(x => x.Codigo == producto.Codigo);
 
-            MvcApplication.Database.Productos[indice].Nombre = producto.Nombre;
-            MvcApplication.Database.Productos[indice].Precio = producto.Precio;
-            MvcApplication.Database.Productos[indice].StrVencimiento = producto.StrVencimiento;
-            //MvcApplication.Database.Productos[indice].Vencimiento = producto.Vencimiento;
+            //MvcApplication.Database.Productos[indice].Nombre = producto.Nombre;
+            //MvcApplication.Database.Productos[indice].Precio = producto.Precio;
+            //MvcApplication.Database.Productos[indice].StrVencimiento = producto.StrVencimiento;
+            ////MvcApplication.Database.Productos[indice].Vencimiento = producto.Vencimiento;
 
             return RedirectToAction("Lista");
         }
