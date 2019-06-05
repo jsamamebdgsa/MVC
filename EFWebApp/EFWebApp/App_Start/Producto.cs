@@ -19,5 +19,8 @@ namespace EFWebApp.App_Start
         public string Nombre { get; set; }
         public Nullable<float> Precio { get; set; }
         public Nullable<System.DateTime> Vencimiento { get; set; }
+        public Nullable<int> CategoriaId { get; set; }
+    
+        public virtual Categoria Categoria { get; set; }
     }
 }

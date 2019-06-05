@@ -10,11 +10,13 @@ using EFWebApp.App_Start;
 
 namespace EFWebApp.Controllers
 {
+
     public class ProductosController : Controller
     {
         private CatalogosEntities db = new CatalogosEntities();
 
         // GET: Productos
+        
         public ActionResult Index()
         {
             return View(db.Producto.ToList());
@@ -38,6 +40,9 @@ namespace EFWebApp.Controllers
         // GET: Productos/Create
         public ActionResult Create()
         {
+            int a = 0;
+            var b = 100 / a;
+            ViewBag.CategoriaList = new SelectList(db.Categoria, "Id", "Nombre");
             return View();
         }
 
@@ -46,7 +51,7 @@ namespace EFWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Codigo,Nombre,Precio,Vencimiento")] Producto producto)
+        public ActionResult Create([Bind(Include = "Id,Codigo,Nombre,Precio,Vencimiento,CategoriaId")] Producto producto)
         {
             if (ModelState.IsValid)
             {
@@ -70,6 +75,7 @@ namespace EFWebApp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CategoriaList = new SelectList(db.Categoria, "Id", "Nombre");
             return View(producto);
         }
 
@@ -78,7 +84,7 @@ namespace EFWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Codigo,Nombre,Precio,Vencimiento")] Producto producto)
+        public ActionResult Edit([Bind(Include = "Id,Codigo,Nombre,Precio,Vencimiento,CategoriaId")] Producto producto)
         {
             if (ModelState.IsValid)
             {

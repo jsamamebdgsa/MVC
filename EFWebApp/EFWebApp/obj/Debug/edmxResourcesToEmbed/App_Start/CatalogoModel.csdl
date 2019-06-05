@@ -9,8 +9,36 @@
     <Property Name="Nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Precio" Type="Single" />
     <Property Name="Vencimiento" Type="DateTime" Precision="3" />
+    <Property Name="CategoriaId" Type="Int32" />
+    <NavigationProperty Name="Categoria" Relationship="CatalogosModel.FK_ProductoCategoria" FromRole="Producto" ToRole="Categoria" />
   </EntityType>
   <EntityContainer Name="CatalogosEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="Categoria" EntityType="CatalogosModel.Categoria" />
+    <AssociationSet Name="FK_ProductoCategoria" Association="CatalogosModel.FK_ProductoCategoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Producto" Relationship="CatalogosModel.FK_ProductoCategoria" FromRole="Categoria" ToRole="Producto" />
+  </EntityType>
+  <Association Name="FK_ProductoCategoria">
+    <End Type="CatalogosModel.Categoria" Role="Categoria" Multiplicity="0..1" />
+    <End Type="CatalogosModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="CategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

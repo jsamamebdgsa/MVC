@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EFWebApp.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,8 @@ namespace EFWebApp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            GlobalFilters.Filters.Add(new MyErrorFilterAttribute());
+            //GlobalFilters.Filters.Add(new LogAttribute());
         }
     }
 }

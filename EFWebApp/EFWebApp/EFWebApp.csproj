@@ -137,10 +137,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CatalogoModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\Categoria.cs">
+      <DependentUpon>CatalogoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\LogAttribute.cs" />
+    <Compile Include="App_Start\MyErrorFilterAttribute.cs" />
     <Compile Include="App_Start\Producto.cs">
       <DependentUpon>CatalogoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -163,6 +169,12 @@
     <Content Include="Views\Productos\Edit.cshtml" />
     <Content Include="Views\Productos\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Categorias\Create.cshtml" />
+    <Content Include="Views\Categorias\Delete.cshtml" />
+    <Content Include="Views\Categorias\Details.cshtml" />
+    <Content Include="Views\Categorias\Edit.cshtml" />
+    <Content Include="Views\Categorias\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

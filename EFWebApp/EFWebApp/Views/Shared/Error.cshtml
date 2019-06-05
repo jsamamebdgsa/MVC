@@ -1,0 +1,20 @@
+﻿@model HandleErrorInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    Ocurrio un error.
+    @Model.ActionName <br />
+    @Model.ControllerName <br />
+    @Model.Exception <br />
+</body>
+</html>
