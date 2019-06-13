@@ -11,6 +11,7 @@ using EFWebApp.App_Start;
 namespace EFWebApp.Controllers
 {
     [Log]
+    [MyAuthorization]
     public class CategoriasController : Controller
     {
         private CatalogosEntities db = new CatalogosEntities();

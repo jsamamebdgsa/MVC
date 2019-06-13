@@ -62,7 +62,6 @@ C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\bin\System.Web.Webpag
 C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\bin\System.Web.Helpers.xml
 C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\bin\System.Web.Mvc.xml
 C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\obj\Debug\EFWebApp.csprojAssemblyReference.cache
 C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\obj\Debug\EFWebApp.csproj.CoreCompileInputs.cache
 C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\obj\Debug\EFWebApp.csproj.CopyComplete
 C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\obj\Debug\EFWebApp.dll
@@ -71,3 +70,4 @@ C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\bin\EntityFramework.d
 C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\bin\EntityFramework.SqlServer.dll
 C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\bin\EntityFramework.xml
 C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\bin\EntityFramework.SqlServer.xml
+C:\SourceCode\Curso\Practica\Ternium\MVC\EFWebApp\EFWebApp\obj\Debug\EFWebApp.csprojAssemblyReference.cache

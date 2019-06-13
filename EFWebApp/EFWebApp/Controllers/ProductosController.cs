@@ -10,7 +10,7 @@ using EFWebApp.App_Start;
 
 namespace EFWebApp.Controllers
 {
-
+    [MyAuthorization]
     public class ProductosController : Controller
     {
         private CatalogosEntities db = new CatalogosEntities();

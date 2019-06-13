@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="CatalogosModel.Producto" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CatalogosModel.Categoria" Width="1.5" PointX="4.875" PointY="1" />
         <AssociationConnector Association="CatalogosModel.FK_ProductoCategoria" />
+        <EntityTypeShape EntityType="CatalogosModel.Usuario" Width="1.5" PointX="3.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

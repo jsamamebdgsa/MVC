@@ -141,13 +141,19 @@
       <DependentUpon>CatalogoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\LogAttribute.cs" />
+    <Compile Include="App_Start\MyAuthorization.cs" />
     <Compile Include="App_Start\MyErrorFilterAttribute.cs" />
     <Compile Include="App_Start\Producto.cs">
       <DependentUpon>CatalogoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Usuario.cs">
+      <DependentUpon>CatalogoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,6 +181,12 @@
     <Content Include="Views\Categorias\Edit.cshtml" />
     <Content Include="Views\Categorias\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

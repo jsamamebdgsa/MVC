@@ -27,5 +27,6 @@ namespace EFWebApp.App_Start
     
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }

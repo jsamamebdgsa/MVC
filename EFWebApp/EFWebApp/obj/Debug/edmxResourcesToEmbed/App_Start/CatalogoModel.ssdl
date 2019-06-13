@@ -19,6 +19,14 @@
     <Property Name="Vencimiento" Type="datetime" />
     <Property Name="CategoriaId" Type="int" />
   </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Clave" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
   <Association Name="FK_ProductoCategoria">
     <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
     <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
@@ -34,6 +42,7 @@
   <EntityContainer Name="CatalogosModelStoreContainer">
     <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ProductoCategoria" Association="Self.FK_ProductoCategoria">
       <End Role="Categoria" EntitySet="Categoria" />
       <End Role="Producto" EntitySet="Producto" />
